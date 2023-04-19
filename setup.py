@@ -1,20 +1,18 @@
-import click
-from src.logic import area, area_zone
+from setuptools import setup, find_packages
 
-@click.command()
-@click.option(
-    "--location",
-    help="This specifies the location you want to know the time. For example, Lagos or London",
+setup(
+    name="timechecker",
+    version="0.0.5",
+    author="Edidiong Etuk",
+    author_email="edeediong@gmail.com",
+    url="https://bit.ly/edeediong-resume",
+    description="An aplication that informs you of the time in different locations and timezones",
+    packages=find_packages(),
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
+    install_requires=["click", "pytz"],
+    entry_points={"console_scripts": ["timechecker = src.main:main"]},
 )
-@click.option(
-    "--zone",
-    help="The timezone information you need. Ensure it is properly capitalized, for example CET or WAT",
-)
-def main(location, zone):
-    if location:
-        area(location)
-    if zone:
-        area_zone(zone)
-
-if __name__ == "__main__":
-    main()
