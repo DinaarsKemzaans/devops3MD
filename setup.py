@@ -7,7 +7,7 @@ setup(
     author_email="edeediong@gmail.com",
     url="https://bit.ly/edeediong-resume",
     description="An aplication that informs you of the time in different locations and timezones",
-    packages=find_packages(),
+    packages="Dinārs Kemzāns 221RDB321_devops3MD",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
