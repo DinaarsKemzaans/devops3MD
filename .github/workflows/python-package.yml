@@ -29,7 +29,7 @@ jobs:
       - name: Build binary wheel and a source tarball
         run: python setup.py sdist
       - name: Publish distribution to Test PyPI
-        uses: pypa/gh-action-pypi-publish@main/v1
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
           password: ${{ secrets.test_pypi_password }}
-          repository_url: https://test.pypi.org/legacy/
+          repository_url: https://github.com/DinaarsKemzaans/devops3MD
