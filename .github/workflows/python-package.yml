@@ -32,4 +32,4 @@ jobs:
         uses: pypa/gh-action-pypi-publish@main
         with:
           password: ${{ secrets.test_pypi_password }}
-          repository_url: https://github.com/DinaarsKemzaans/devops3MD
+          repository_url: https://test.pypi.org/legacy/
