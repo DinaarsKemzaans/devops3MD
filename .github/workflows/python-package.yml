@@ -9,7 +9,7 @@ on:
 jobs:
   build-n-publish:
     name: Build and publish Python distribution
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@main
       - name: Set up Python 3.7
@@ -28,4 +28,8 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Build binary wheel and a source tarball
         run: python setup.py sdist
-      
+      - name: Publish distribution to Test PyPI
+        uses: pypa/gh-action-pypi-publish@main
+        with:
+          password: ${{ secrets.test_pypi_password }}
+          repository_url: https://github.com/DinaarsKemzaans/devops3MD
